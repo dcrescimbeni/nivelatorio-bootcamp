@@ -276,5 +276,116 @@ function warWord(string1, string2) {
 
   return sumString1 > sumString2 ? string1 : string2;
 }
-console.log(warWord('hola', 'chau'));
-console.log(warWord('love', 'friendship'));
+// console.log(warWord('hola', 'chau'));
+// console.log(warWord('love', 'friendship'));
+
+// 17
+const prefijos = [54, 55, 56, 57, 58];
+const paises = ['argentina', 'brasil', 'chile', 'colombia', 'venezuela'];
+
+function validarPrefijo(number) {
+  // Crear nuevo objeto
+  const prefijoPais = {};
+  prefijos.forEach((element, index) => {
+    prefijoPais[element] = paises[index];
+  });
+
+  let stringNumber = number.toString();
+  let prefixNumber = `${stringNumber[0]}${stringNumber[1]}`;
+
+  return prefijoPais[prefixNumber] !== undefined
+    ? `Este número pertenece a ${prefijoPais[prefixNumber]}`
+    : `Este número no pertenece a nuestros países`;
+}
+// console.log(validarPrefijo(5412345678));
+// console.log(validarPrefijo(5712345678));
+// console.log(validarPrefijo(8012345678));
+
+var prueba = {
+  nombre: 'santi',
+  edad: 22,
+  nacionalidad: 'de otro planeta',
+  documento: 44444444,
+};
+
+function reverseKeys(object) {
+  if (typeof object !== 'object') {
+    return `error, input can't be ${typeof object}`;
+  }
+
+  const keysArray = Object.keys(object);
+
+  const newObject = {};
+  keysArray.forEach((element) => {
+    if (typeof object[element] === 'string') {
+      newObject[object[element]] = element;
+    } else {
+      newObject[element] = object[element];
+    }
+  });
+  return newObject;
+}
+// console.log(reverseKeys(prueba));
+
+// 19
+function palindromo(string) {
+  let isPalyndrome = true;
+  let middle;
+  if (string.length % 2 === 0) {
+    // Palabra de largo par
+    middle = string.length / 2 - 1;
+  } else {
+    // Palabra impar
+    middle = (string.length - 1) / 2 - 1;
+  }
+
+  for (let i = 0; i <= middle; i++) {
+    if (
+      string[i].toLowerCase() !== string[string.length - 1 - i].toLowerCase()
+    ) {
+      isPalyndrome = false;
+    }
+  }
+  return isPalyndrome;
+}
+// console.log(palindromo('anilina'));
+// console.log(palindromo('Ana'));
+// console.log(palindromo('Enrique'));
+
+// 20
+function rotar(array, number) {
+  const newArray = [];
+  const firstRotationElement = array.length - number;
+
+  for (let i = firstRotationElement; i < array.length; i++) {
+    newArray.push(array[i]);
+  }
+
+  for (let j = 0; j < array.length - number; j++) {
+    newArray.push(array[j]);
+  }
+
+  return newArray;
+}
+
+// console.log(rotar([1, 2, 3, 4, 5], 2));
+// console.log(rotar([1, 2, 3, 4, 5], 3));
+
+// 21
+function consecutivosSimilares(string) {
+  let sumConsecutives = 0;
+
+  for (let i = 1; i < string.length; i++) {
+    if (string[i] === string[i - 1]) {
+      sumConsecutives++;
+    }
+  }
+
+  return sumConsecutives;
+}
+
+console.log(consecutivosSimilares('AAAA'));
+console.log(consecutivosSimilares('BBBBB'));
+console.log(consecutivosSimilares('ABABABAB'));
+console.log(consecutivosSimilares('BABABA'));
+console.log(consecutivosSimilares('AAABBB'));
