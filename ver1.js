@@ -138,16 +138,12 @@ function newJoin(array, joiner) {
 var transformArray = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 // console.log(transformArray);
 function newPop(array) {
-  let newArray = [];
-  let popElement = array[array.length - 1];
-  for (let i = 0; i < array.length - 1; i++) {
-    newArray[i] = array[i];
-  }
-  return popElement;
+  const lastElement = array[array.length - 1]; // Get last element
+  array.splice(array.length - 1, 1); // Delete last element
+  return lastElement;
 }
-// console.log(newPop(transformArray));
+newPop(transformArray);
 // console.log(transformArray);
-// TODO: No puedo replicar la modificación del array original
 
 // filter
 function newFilter(array, filterFun) {
@@ -384,8 +380,8 @@ function consecutivosSimilares(string) {
   return sumConsecutives;
 }
 
-console.log(consecutivosSimilares('AAAA'));
-console.log(consecutivosSimilares('BBBBB'));
-console.log(consecutivosSimilares('ABABABAB'));
-console.log(consecutivosSimilares('BABABA'));
-console.log(consecutivosSimilares('AAABBB'));
+// console.log(consecutivosSimilares('AAAA'));
+// console.log(consecutivosSimilares('BBBBB'));
+// console.log(consecutivosSimilares('ABABABAB'));
+// console.log(consecutivosSimilares('BABABA'));
+// console.log(consecutivosSimilares('AAABBB'));
