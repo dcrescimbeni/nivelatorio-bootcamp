@@ -1,8 +1,7 @@
-console.log('it works');
-
-// 1
+// 1 - Loop de pares
 function loopDePares(number) {
   for (let i = 0; i <= 100; i++) {
+    console.log(i);
     if ((i + number) % 2 === 0) {
       console.log(`El número ${i + number} es par`);
     }
@@ -10,17 +9,18 @@ function loopDePares(number) {
 }
 // loopDePares(10);
 
-// 2
+// 2 - Loop de impares con palabra
 function loopPalabra(number, word) {
   for (let index = 0; index <= 100; index++) {
+    console.log(index);
     if ((index + number) % 2 === 1) {
       console.log(word);
     }
   }
 }
-// loopPalabra(1, 'asd');
+// loopPalabra(1, 'dino');
 
-// 3
+// 3 - Sumatoria
 function sumattion(number) {
   let sum = 0;
   for (let index = 0; index <= number; index++) {
@@ -28,17 +28,25 @@ function sumattion(number) {
   }
   return sum;
 }
-// console.log(sumattion(2));
+// console.log(sumattion(3));
+// console.log(sumattion(8));
 
-// 4
-function callFun(number, fun) {
-  fun(number);
+// 4 - Callback
+function callback(number, fun) {
+  return fun(number);
 }
-// callFun(10, (num) => {
-//   console.log(num);
-// });
+// console.log(
+//   callback(5, (num) => {
+//     return num * 10;
+//   })
+// );
+// console.log(
+//   callback(25, (num) => {
+//     return num / 5;
+//   })
+// );
 
-// 5
+// 5 - Nuevo arreglo
 function nuevoArreglo(number) {
   let newArray = [];
   for (let i = 1; i <= number; i++) {
@@ -46,9 +54,10 @@ function nuevoArreglo(number) {
   }
   return newArray;
 }
+// console.log(nuevoArreglo(5));
 // console.log(nuevoArreglo(10));
 
-// 6
+// 6 - Similar string.split()
 function newSplit(string) {
   let stringSplit = [];
   for (let i = 0; i < string.length; i++) {
@@ -57,9 +66,10 @@ function newSplit(string) {
   return stringSplit;
 }
 // console.log(newSplit('hola'));
+// console.log(newSplit('chau'));
 
-// 7
-function middleChar(string) {
+// 7 - Caracter del medio
+function middleCharacter(string) {
   let middlePos;
   if (string.length % 2 === 1) {
     // Impar
@@ -70,9 +80,11 @@ function middleChar(string) {
     return `${string[middlePos]}${string[middlePos + 1]}`;
   }
 }
-// console.log(middleChar('plataforma5'));
+// console.log(middleCharacter('plataforma5'));
+// console.log(middleCharacter('hola'));
+// console.log(middleCharacter('cosas'));
 
-// 8
+// 8 - Mover ceros a lo último
 function moveZeros(array) {
   const array1 = [];
   const arrayZero = [];
@@ -85,9 +97,10 @@ function moveZeros(array) {
   });
   return array1.concat(arrayZero);
 }
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a']));
 // console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
 
-// 9
+// 9 - Manejando dos arreglos
 function arrayHandler(array1, array2) {
   if (array1.length !== array2.length) {
     console.log('Los arrays no son del mismo largo');
@@ -99,13 +112,11 @@ function arrayHandler(array1, array2) {
 }
 // arrayHandler([1, 2, 3, 4], ['h', 'o', 'l', 'a']);
 
-// 10
+// 10 - Mezclando arreglos
 function mezclarArreglos(array1, array2) {
   const newArray = [];
   let maxLength;
   // Determinar el array más largo
-  console.log(array1.length);
-  console.log(array2.length);
   if (array1.length > array2.length) {
     // El primer array es más largo
     maxLength = array1.length;
@@ -120,9 +131,11 @@ function mezclarArreglos(array1, array2) {
   }
   return newArray;
 }
+// console.log(mezclarArreglos([1, 2, 3, 4], ['h', 'o', 'l', 'a']));
+// console.log(mezclarArreglos([1, 2, 3, 4], ['h', 'p']));
 // console.log(mezclarArreglos(['h', 'p'], [1, 2, 3, 4]));
 
-// 11
+// 11 - Arreglos
 // join
 function newJoin(array, joiner) {
   let string = '';
