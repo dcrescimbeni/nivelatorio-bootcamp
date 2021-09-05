@@ -1,3 +1,5 @@
+// Dino Crescimbeni
+
 // 1 - Loop de pares
 function loopDePares(number) {
   for (let i = 0; i <= 100; i++) {
@@ -148,14 +150,14 @@ function newJoin(array, joiner) {
 // console.log(newJoin([1, 2, 3, 4, 5], ' '));
 
 // pop
-var transformArray = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+var transformArray = [1, 2, 3, 4, 5];
 // console.log(transformArray);
 function newPop(array) {
   const lastElement = array[array.length - 1]; // Get last element
   array.splice(array.length - 1, 1); // Delete last element
   return lastElement;
 }
-newPop(transformArray);
+// console.log(newPop(transformArray));
 // console.log(transformArray);
 
 // filter
@@ -214,6 +216,7 @@ function minSum(array) {
 
   return min1 + min2;
 }
+// console.log(minSum([7, 6, 5, 4, 3, 2, 1]));
 // console.log(minSum([1, 10, 43, 900, 20, 8]));
 
 // 13
@@ -227,7 +230,18 @@ function arregloDeObjetos(number) {
 // console.log(arregloDeObjetos(5));
 // console.log(arregloDeObjetos(3));
 
-// 15
+// 14 - Arreglo de objetos
+function arregloDeObjetos(number, string) {
+  const newArray = [];
+  for (let i = 1; i <= number; i++) {
+    newArray.push({ [string]: i });
+  }
+  return newArray;
+}
+// console.log(arregloDeObjetos(5, 'hola'));
+// console.log(arregloDeObjetos(3, 'chau'));
+
+// 15 - Unica propiedad
 arreglo = [
   { name: 'lucas', edad: 20 },
   { name: 'santi', edad: 22 },
@@ -242,7 +256,7 @@ function oneProperty(arreglo, property) {
 // console.log(oneProperty(arreglo, 'edad'));
 // console.log(oneProperty(arreglo, 'name'));
 
-// 16
+// 16 - Guerra de palabras
 const abc = {
   a: 1,
   b: 2,
@@ -288,7 +302,7 @@ function warWord(string1, string2) {
 // console.log(warWord('hola', 'chau'));
 // console.log(warWord('love', 'friendship'));
 
-// 17
+// 17 - Prefijos telefonicos
 const prefijos = [54, 55, 56, 57, 58];
 const paises = ['argentina', 'brasil', 'chile', 'colombia', 'venezuela'];
 
@@ -310,6 +324,7 @@ function validarPrefijo(number) {
 // console.log(validarPrefijo(5712345678));
 // console.log(validarPrefijo(8012345678));
 
+// 18 - {value:key} kelue: vay
 var prueba = {
   nombre: 'santi',
   edad: 22,
@@ -319,7 +334,9 @@ var prueba = {
 
 function reverseKeys(object) {
   if (typeof object !== 'object') {
-    return `error, input can't be ${typeof object}`;
+    return `error, input can't be a ${typeof object}`;
+  } else if (Array.isArray(object)) {
+    return `error, input can't be an Array`;
   }
 
   const keysArray = Object.keys(object);
@@ -334,9 +351,12 @@ function reverseKeys(object) {
   });
   return newObject;
 }
+// console.log(reverseKeys(344));
+// console.log(reverseKeys([]));
+// console.log(reverseKeys('hola'));
 // console.log(reverseKeys(prueba));
 
-// 19
+// 19 - Palindromo
 function palindromo(string) {
   let isPalyndrome = true;
   let middle;
@@ -361,7 +381,7 @@ function palindromo(string) {
 // console.log(palindromo('Ana'));
 // console.log(palindromo('Enrique'));
 
-// 20
+// 20 - Rotación de arreglo a la derecha
 function rotar(array, number) {
   const newArray = [];
   const firstRotationElement = array.length - number;
@@ -376,11 +396,10 @@ function rotar(array, number) {
 
   return newArray;
 }
-
 // console.log(rotar([1, 2, 3, 4, 5], 2));
 // console.log(rotar([1, 2, 3, 4, 5], 3));
 
-// 21
+// 21 - Consecutivos similares
 function consecutivosSimilares(string) {
   let sumConsecutives = 0;
 
