@@ -1,4 +1,5 @@
 // Dino Crescimbeni
+// github: https://github.com/dcrescimbeni/nivelatorio-bootcamp
 
 // 1 - Loop de pares
 function loopDePares(number) {
