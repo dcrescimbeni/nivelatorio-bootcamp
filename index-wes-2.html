@@ -73,23 +73,60 @@
 
       // Array.prototype.filter()
       // 1. Filter the list of inventors for those who were born in the 1500's
+      const bornInFifteens = inventors.filter((inventor) => {
+        if (inventor.year >= 1500 && inventor.year < 1600) {
+          return true;
+        }
+      });
+      console.log(bornInFifteens);
 
       // Array.prototype.map()
       // 2. Give us an array of the inventors first and last names
+      const firstAndLast = inventors.map((inventor) => {
+        return `${inventor.first} ${inventor.last}`;
+      });
+      console.log(firstAndLast);
 
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
+      const byBirthdate = inventors.sort((a, b) => {
+        let yearBornA = a.year;
+        let yearBornB = b.year;
+
+        return yearBornA < yearBornB ? -1 : 1;
+      });
+      console.log(byBirthdate);
 
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live all together?
+      const yearsLived = inventors.reduce((years, inventor) => {
+        const lived = inventor.passed - inventor.year;
+        years += lived;
+        return years;
+      }, 0);
+      console.log(yearsLived);
 
       // 5. Sort the inventors by years lived
+      const byYearsLived = inventors.sort((a, b) => {
+        const yearsA = a.passed - a.year;
+        const yearsB = b.passed - b.year;
+
+        return yearsA < yearsB ? -1 : 1;
+      });
+      console.log(byYearsLived);
 
       // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
       // 7. sort Exercise
       // Sort the people alphabetically by last name
+      const sortedByLastName = people.sort((a, b) => {
+        let aLast = a.split(', ')[0];
+        let bLast = b.split(', ')[0];
+
+        return aLast < bLast ? -1 : 1;
+      });
+      console.log(sortedByLastName);
 
       // 8. Reduce Exercise
       // Sum up the instances of each of these
@@ -109,6 +146,17 @@
         'car',
         'truck',
       ];
+
+      let sumData = data.reduce((obj, element) => {
+        if (obj[element] === undefined) {
+          obj[element] = 0;
+        }
+
+        obj[element] += 1;
+
+        return obj;
+      }, {});
+      console.log(sumData);
     </script>
   </body>
 </html>
